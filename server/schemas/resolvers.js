@@ -28,6 +28,7 @@ const resolvers = {
           runValidators: true,
         }
       );
+      throw new AuthenticationError('You need to be logged in!');
     },
 
     deleteBook: async (parent, { userId, book }) => {
@@ -36,6 +37,7 @@ const resolvers = {
         { $pull: { savedbooks: Book } },
         { new: true }
       );
+      throw new AuthenticationError('You need to be logged in!');
     },
 
     login: async (parent, { email, password }) => {
