@@ -19,8 +19,8 @@ const typeDefs = gql`
   }
 
   type Auth {
-    token:
-    user: 
+    token: ID!
+    user: User
   }
 
   type Query {
@@ -28,7 +28,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    login
+    login(email: String!, password: String!): Auth
     addUser(email: String!, password: String!): Auth
     addSkill(username: String!, email: String!, password: String!): Auth
     removeProfile(profileId: ID!): Profile
