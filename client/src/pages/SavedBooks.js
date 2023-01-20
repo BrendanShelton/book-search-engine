@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
-import { REMOVE_SKILL } from '../../../../../UR-VIRT-FSF-PT-08-2022-U-LOLC/21-MERN/01-Activities/25-Ins_Resolver-Context/client/src/utils/mutations';
 
-import { getMe, deleteBook } from '../utils/API';
+
+//import { getMe, deleteBook } from '../utils/API';
 import Auth from '../utils/auth';
-import { removeBookId } from '../utils/localStorage';
+//import { removeBookId } from '../utils/localStorage';
+
+import { REMOVE_BOOK } from '../../utils/mutations';
+import { GET_ME } from '../../utils/queries';
 
 const SavedBooks = () => {
   //const [userData, setUserData] = useState({});
@@ -68,7 +71,7 @@ const SavedBooks = () => {
         variables: { userId, book },
       });
 
-      setSkill('');
+      
 
     } catch (err) {
       console.error(err);
